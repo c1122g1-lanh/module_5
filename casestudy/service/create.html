@@ -48,7 +48,11 @@
     <div class="container1">
         <form id="contactus" action="" method="post">
             <h3 style="text-align: center">Tạo mới</h3>
-            <fieldset> <input placeholder="Tên dịch vụ" type="text" tabindex="1" required autofocus> </fieldset>
+            <fieldset><select class="form-select" aria-label="Default select example">
+                <option value="0" disabled selected>Tên dịch vụ</option>
+                <option value="1">Villa</option>
+                <option value="2">Room</option>
+            </select> </fieldset>
             <fieldset> <input placeholder="Diện tích" type="text" tabindex="2" required> </fieldset>
             <fieldset> <input placeholder="Hình ảnh" type="text" tabindex="3" required> </fieldset>
             <fieldset> <textarea placeholder="Mô tả thêm..." tabindex="5" required></textarea> </fieldset>
