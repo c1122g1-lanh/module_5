@@ -1,0 +1,19 @@
+.tableStudent{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border: 2px solid forestgreen;
+}
+
+th {
+    border: 1px solid black;
+}
+
+td {
+    border: #282c34 solid 1px;
+    text-align: center;
+}
