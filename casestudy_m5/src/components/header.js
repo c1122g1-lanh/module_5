@@ -7,7 +7,7 @@ export class Header extends Component{
     }
     render() {
         return (
-            <div className="container">
+            <div className="dropdown-header" style={{backgroundColor:"black"}}>
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a
                         href="/"
