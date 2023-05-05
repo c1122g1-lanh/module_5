@@ -5,13 +5,15 @@ import {Footer} from "./components/footer";
 import {Body} from "./components/body";
 import {ListCustomer} from "./furama/customer/ListCustomer";
 import {ListService} from "./furama/service/ListService";
+import {ListContacts} from "./furama/contact/ListContact";
 
 function App() {
   return (
       <>
     <Header/>
     {/*<ListService/>*/}
-    <ListCustomer/>
+    {/*<ListCustomer/>*/}
+    <ListContacts/>
     <Footer/>
     </>
   );
