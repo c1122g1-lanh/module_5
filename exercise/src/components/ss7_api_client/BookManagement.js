@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Formik} from "formik";
 import * as bookService from "../../services/bookService";
 import {Link} from "react-router-dom";
+import {findAll, remove} from "../../services/bookService";
 
 export function BookManagement() {
     const [bookList, setBookList] = useState([])
@@ -12,7 +13,12 @@ export function BookManagement() {
                 setBookList(result)
             }
             fetchApi()
-        })
+        },[])
+    const handleDelete = async (id) => {
+        await remove(id)
+        alert("Delete success")
+        setBookList(await findAll())
+    }
     return (
         <>
             <div className='row'>
@@ -41,10 +47,10 @@ export function BookManagement() {
                                         <td>{book.title}</td>
                                         <td>{book.quantity}</td>
                                         <td>
-                                            <Link to='/' className='btn btn-success'>Edit</Link>
+                                            <Link to={`/edit-book/${book.id}`} className='btn btn-success'>Edit</Link>
                                         </td>
                                         <td>
-                                            <Link to='/' className='btn btn-danger'>Delete</Link>
+                                            <button type='button' onClick={()=> handleDelete(book.id)} className='btn btn-danger'>Delete</button>
                                         </td>
                                     </tr>
                                 ))

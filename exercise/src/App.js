@@ -9,6 +9,7 @@ import {FormHealthDeclaration} from "./components/ss6/FormHealthDeclaration";
 import {TodoList} from "./components/ss7_api_client/TodoList";
 import {BookManagement} from "./components/ss7_api_client/BookManagement";
 import {CreateBook} from "./components/ss7_api_client/CreateBook";
+import {EditBook} from "./components/ss7_api_client/EditBook";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Routes>
             <Route path='/' element={<BookManagement/>}/>
             <Route path='/add-book' element={<CreateBook/>}/>
+            <Route path='/edit-book/:id' element={<EditBook/>}/>
         </Routes>
     );
 }

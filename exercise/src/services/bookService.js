@@ -17,3 +17,26 @@ export const save = async (book) => {
         console.log(e)
     }
 }
+
+export const remove = async (book) =>{
+    try {
+        await axios.delete(`http://localhost:8080/books/${book.id}`,{...book})
+    }catch (error){
+        console.log(error)
+    }
+}
+export const edit = async (book) => {
+    try {
+        await axios.put('http://localhost:8080/books/' + book.id,{...book})
+    }catch (error){
+        console.log(error)
+    }
+}
+export const getBook = async (id) => {
+    try {
+        const result = await axios.get("http://localhost:8080/books/" + id)
+        return result.data
+    }catch (e) {
+        console.log(e)
+    }
+}
