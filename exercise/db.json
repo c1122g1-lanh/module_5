@@ -44,21 +44,26 @@
       "id": 3,
       "title": "book 53",
       "quantity": 10
+    }
+  ],
+  "users": [
+    {
+      "id": 2,
+      "name": "Khai",
+      "email": "khai@gmail.com",
+      "website": "khai.org"
+    },
+    {
+      "id": 3,
+      "name": "Anh",
+      "email": "anh@gmail.com",
+      "website": "anh.org"
     },
     {
       "id": 4,
-      "title": "book 4",
-      "quantity": 3
-    },
-    {
-      "id": 5,
-      "title": "book 5",
-      "quantity": 5
-    },
-    {
-      "id": 6,
-      "title": "book 7",
-      "quantity": 3
+      "name": "Chinh",
+      "email": "chinh@gmail.com",
+      "website": "chinh.org"
     }
   ]
 }
