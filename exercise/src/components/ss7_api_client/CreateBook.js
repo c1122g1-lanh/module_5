@@ -25,7 +25,6 @@ export function CreateBook() {
                     onSubmit={(book) => {
                         const create = async () => {
                             await bookService.save(book)
-                            setBookList([...bookList, book])
                         }
                         create()
                         alert(" Thành công")

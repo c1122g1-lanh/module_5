@@ -24,9 +24,10 @@ function App() {
         // <TodoList/>
 
         <Routes>
-            <Route path='/user' element={<UserList/>}/>
-            {/*<Route path='/add-book' element={<CreateBook/>}/>*/}
-            {/*<Route path='/edit-book/:id' element={<EditBook/>}/>*/}
+            {/*<Route path='/user' element={<UserList/>}/>*/}
+            <Route path='/' element={<BookManagement/>}/>
+            <Route path='/add-book' element={<CreateBook/>}/>
+            <Route path='/edit-book/:id' element={<EditBook/>}/>
 
         </Routes>
     );
