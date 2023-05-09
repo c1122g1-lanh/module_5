@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from "react";
 import {Field, Form, Formik} from "formik";
 import * as bookService from "../../services/bookService";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export function CreateBook() {
     const [bookList, setBookList] = useState([])
+    const navigate = useNavigate()
     useEffect(() => {
         const fetchApi = async () => {
             const result = await bookService.findAll()
             setBookList(result)
         }
         fetchApi()
+
     }, [])
 
     return (
@@ -26,6 +28,8 @@ export function CreateBook() {
                             setBookList([...bookList, book])
                         }
                         create()
+                        alert(" Thành công")
+                        navigate('/')
 
                     }}>
                 <Form>
