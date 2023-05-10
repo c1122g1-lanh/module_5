@@ -31,8 +31,8 @@ export function CreateContact() {
                         name: Yup.string().required('Nhập tên...'),
                         dayOfBegin: Yup.string().required('Nhập ngày bắt đầu...'),
                         dayOfEnd: Yup.string().required('Nhập kết thúc...'),
-                        deposit: Yup.number().integer().required('Nhập số tiền đặt cọc....'),
-                        total: Yup.number().integer().required('Nhập tổng số tiền....')
+                        deposit: Yup.string().required('Nhập số tiền đặt cọc....'),
+                        total: Yup.string().required('Nhập tổng số tiền....')
                     })}
                     onSubmit={(contact) => {
                         const create = async () => {

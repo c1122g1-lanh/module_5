@@ -31,22 +31,233 @@
       "dayOfEnd": "05-01-2023",
       "deposit": "1.000.000",
       "total": "5.000.000"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nguyễn Minh Lãnh",
+      "dayOfBirth": "01/11/1990",
+      "gender": 1,
+      "numberCard": 111111111,
+      "numberPhone": 111111111,
+      "email": "lanh@gmail.com",
+      "customerType": 1,
+      "address": "QNam"
+    },
+    {
+      "id": 2,
+      "name": "Lê Văn Chính",
+      "dayOfBirth": "01/02/2003",
+      "gender": 3,
+      "numberCard": 222222222,
+      "numberPhone": 222222222,
+      "email": "chinh@gmail.com",
+      "customerType": 2,
+      "address": "QBình"
+    },
+    {
+      "id": 3,
+      "name": "Lê Phát Đạt",
+      "dayOfBirth": "01/11/1997",
+      "gender": 1,
+      "numberCard": 333333333,
+      "numberPhone": 333333333,
+      "email": "dat@gmail.com",
+      "customerType": 3,
+      "address": "Huế"
+    },
+    {
+      "id": 4,
+      "name": "Nguyễn Văn Minh",
+      "dayOfBirth": "01/11/1998",
+      "gender": 3,
+      "numberCard": 444444444,
+      "numberPhone": 444444444,
+      "email": "minh@gmail.com",
+      "customerType": 4,
+      "address": "Nghệ An"
     },
     {
       "id": 5,
-      "name": "HD-05",
-      "dayOfBegin": "01-01-2023",
-      "dayOfEnd": "05-01-2023",
-      "deposit": "1.000.000",
-      "total": "5.000.000"
+      "name": "Phan Văn Đồng",
+      "dayOfBirth": "01/11/1997",
+      "gender": 1,
+      "numberCard": 555555555,
+      "numberPhone": 555555555,
+      "email": "dong@gmail.com",
+      "customerType": 1,
+      "address": "Quảng Trị"
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
     },
     {
-      "id": 6,
-      "name": "HD-06",
-      "dayOfBegin": "09/05/2023",
-      "dayOfEnd": "19/05/2023",
-      "deposit": 10000000,
-      "total": "5000000"
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "name": "nam"
+    },
+    {
+      "id": 2,
+      "name": "nữ"
+    },
+    {
+      "id": 3,
+      "name": "khác"
+    }
+  ],
+  "facilitys": [
+    {
+      "id": 1,
+      "name": "Villa",
+      "image": "https://luvill.asia/wp-content/uploads/2019/08/kien-truc-furama-resort-da-nang-1024x680.jpg",
+      "area": 50,
+      "price": "5.000.000 vnđ",
+      "maxPeople": 5,
+      "rentType": 1,
+      "standardRoom": "4 sao",
+      "descriptionOtherCovenience": "good",
+      "poolArea": 5,
+      "numberOfFloors": 5,
+      "serviceFree": null,
+      "serviceAdd": 1
+    },
+    {
+      "id": 2,
+      "name": "House",
+      "image": "https://luvill.asia/wp-content/uploads/2019/08/kien-truc-furama-resort-da-nang-1024x680.jpg",
+      "area": 25,
+      "price": "2.000.000 vnđ",
+      "maxPeople": 3,
+      "rentType": 2,
+      "standardRoom": "2 sao",
+      "descriptionOtherCovenience": "good",
+      "poolArea": 5,
+      "numberOfFloors": 5,
+      "serviceFree": null,
+      "serviceAdd": 1
+    },
+    {
+      "id": 3,
+      "name": "House",
+      "image": "https://luvill.asia/wp-content/uploads/2019/08/kien-truc-furama-resort-da-nang-1024x680.jpg",
+      "area": 25,
+      "price": "2.000.000 vnđ",
+      "maxPeople": 3,
+      "rentType": 2,
+      "standardRoom": "2 sao",
+      "descriptionOtherCovenience": "good",
+      "poolArea": 5,
+      "numberOfFloors": 5,
+      "serviceFree": null,
+      "serviceAdd": 1
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "image": "https://luvill.asia/wp-content/uploads/2019/08/kien-truc-furama-resort-da-nang-1024x680.jpg",
+      "area": 25,
+      "price": "2.000.000 vnđ",
+      "maxPeople": 3,
+      "rentType": 2,
+      "standardRoom": "2 sao",
+      "descriptionOtherCovenience": "good",
+      "poolArea": 5,
+      "numberOfFloors": 5,
+      "serviceFree": null,
+      "serviceAdd": 1
+    }
+  ],
+  "serviceFree": [
+    {
+      "id": 1,
+      "name": "Nước ngọt"
+    },
+    {
+      "id": 2,
+      "name": "Khăn ướt"
+    },
+    {
+      "id": 3,
+      "name": "Cà phê"
+    },
+    {
+      "id": 4,
+      "name": "Nước lọc"
+    }
+  ],
+  "serviceAdd": [
+    {
+      "id": 1,
+      "name": "massage"
+    },
+    {
+      "id": 2,
+      "name": "karaoke"
+    },
+    {
+      "id": 3,
+      "name": "thức ăn"
+    },
+    {
+      "id": 4,
+      "name": "nước uống"
+    },
+    {
+      "id": 5,
+      "name": "thuê xe di chuyển tham quan resort"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "year"
+    },
+    {
+      "id": 2,
+      "name": "month"
+    },
+    {
+      "id": 3,
+      "name": "day"
     }
   ]
 }

@@ -1,7 +1,25 @@
-import React, {Component, useState} from "react";
-import {facility} from "./facility";
+import React, {useEffect, useState} from "react";
+import * as facilityService from "../../service/facilityService";
 
 export function ListService() {
+    const [facilitys,setFacilitys] = useState([])
+    const [facility,setFacility] = useState()
+    useEffect(() => {
+        const res = async () => {
+            const result = await facilityService.findAll()
+            setFacilitys(result)
+        }
+        res()
+    },[])
+    const handleDelete = async () => {
+        await facilityService.remove(facility.id);
+        let result = await facilityService.findAll();
+        setFacilitys(result);
+    };
+    const getData = async (id) => {
+        const data = await facilityService.getFacility(id);
+        setFacility(data);
+    };
     return (
         <>
             <div className="container1">
@@ -15,8 +33,8 @@ export function ListService() {
             <div className="row">
                 <h2 style={{textAlign:"center"}}>Danh sách dịch vụ</h2>
                 {
-                    facility.map((value, index)=>(
-                        <div key={index} className="card col-3" style={{width: "25%"}}>
+                    facilitys.map((value)=>(
+                        <div key={value.id} className="card col-3" style={{width: "25%"}}>
                             <img
                                 src={value.image}
 
@@ -30,9 +48,10 @@ export function ListService() {
                                 <a href="#" className="btn btn-primary" style={{marginRight:"3px"}}>
                                     Sửa
                                 </a>
-                                <a href="#" className="btn btn-danger">
-                                    Xóa
-                                </a>
+                                <button onClick={()=>getData(value.id)} type="button" className="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" >
+                                    Delete
+                                </button>
                             </div>
                         </div>
                     ))
@@ -68,6 +87,25 @@ export function ListService() {
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Delete</h5>
+                        </div>
+                        <div className="modal-body">
+                            <span>Bạn có muốn xóa</span> <span style={{color:'red'}}>{facility?.name}</span>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancel
+                            </button>
+                            <button  onClick={()=>handleDelete()} type="button" className="btn btn-primary"  data-bs-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )

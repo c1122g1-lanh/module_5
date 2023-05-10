@@ -4,13 +4,23 @@ import * as contactService from "../../service/contactService";
 
 export function ListContacts() {
     const [contacts,setContacts] = useState([])
+    const [contact,setContact] = useState()
     useEffect(() => {
         const contact = async () => {
             const result = await contactService.findAll()
             setContacts(result)
         }
         contact()
-    })
+    },[])
+    const handleDelete = async () => {
+        await contactService.remove(contact.id);
+        let result = await contactService.findAll();
+        setContacts(result);
+    };
+    const getData = async (id) => {
+        const data = await contactService.getContact(id);
+        setContact(data);
+    };
     return (
         <>
             <div className="container">
@@ -40,7 +50,10 @@ export function ListContacts() {
                                 <td>{contact.total}</td>
                                 <td><button className="btn btn-primary">Detail</button></td>
                                 <td><button className="btn btn-warning">Edit</button></td>
-                                <td><button className="btn btn-danger">Delete</button></td>
+                                <td><button onClick={()=>getData(contact.id)} type="button" className="btn btn-danger" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" >
+                                    Delete
+                                </button></td>
                             </tr>
                         ))
                     }
@@ -78,6 +91,25 @@ export function ListContacts() {
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Delete</h5>
+                        </div>
+                        <div className="modal-body">
+                            <span>Bạn có muốn xóa</span> <span style={{color:'red'}}>{contact?.name}</span>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancel
+                            </button>
+                            <button  onClick={()=>handleDelete()} type="button" className="btn btn-primary"  data-bs-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
 
