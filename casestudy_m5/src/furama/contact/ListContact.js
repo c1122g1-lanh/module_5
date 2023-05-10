@@ -1,13 +1,21 @@
-import React, {Component} from "react";
-import {contacts} from "./contacts";
+import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+import * as contactService from "../../service/contactService";
 
 export function ListContacts() {
-
+    const [contacts,setContacts] = useState([])
+    useEffect(() => {
+        const contact = async () => {
+            const result = await contactService.findAll()
+            setContacts(result)
+        }
+        contact()
+    })
     return (
         <>
             <div className="container">
-                <h3 style={{textAlign: "center"}}>Danh sách khách hàng</h3>
-                <a href="">Tạo mới</a>
+                <h3 style={{textAlign: "center"}}>Danh sách hợp đồng</h3>
+                <Link to="/contact-create">Tạo mới</Link>
                 <table className="table table-striped ">
                     <thead>
                     <tr className="table-dark">
@@ -22,14 +30,14 @@ export function ListContacts() {
                     </thead>
                     <tbody>
                     {
-                        contacts.map((value, index) => (
+                        contacts.map((contact, index) => (
                             <tr key={index}>
-                                <td>{value.id}</td>
-                                <td>{value.name}</td>
-                                <td>{value.dayOfBegin}</td>
-                                <td>{value.dayOfEnd}</td>
-                                <td>{value.deposit}</td>
-                                <td>{value.total}</td>
+                                <td>{contact.id}</td>
+                                <td>{contact.name}</td>
+                                <td>{contact.dayOfBegin}</td>
+                                <td>{contact.dayOfEnd}</td>
+                                <td>{contact.deposit}</td>
+                                <td>{contact.total}</td>
                                 <td><button className="btn btn-primary">Detail</button></td>
                                 <td><button className="btn btn-warning">Edit</button></td>
                                 <td><button className="btn btn-danger">Delete</button></td>
