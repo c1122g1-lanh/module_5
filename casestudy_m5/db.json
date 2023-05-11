@@ -173,7 +173,7 @@
       "serviceAdd": 1
     },
     {
-      "id": 4,
+      "id": 48,
       "name": "House",
       "image": "https://luvill.asia/wp-content/uploads/2019/08/kien-truc-furama-resort-da-nang-1024x680.jpg",
       "area": 25,
@@ -186,6 +186,21 @@
       "numberOfFloors": 5,
       "serviceFree": null,
       "serviceAdd": 1
+    },
+    {
+      "id": 49,
+      "name": "hd-07",
+      "image": "https://pix10.agoda.net/hotelImages/109/10953/10953_16030216470040397599.jpg?ca=6&ce=1&s=1024x768",
+      "area": "5",
+      "price": "15.000.000",
+      "maxPeople": "4",
+      "rentType": "2",
+      "standardRoom": "5",
+      "descriptionOtherCovenience": "ok",
+      "poolArea": "2",
+      "numberOfFloors": "2",
+      "serviceFree": "2",
+      "serviceAdd": "2"
     }
   ],
   "serviceFree": [

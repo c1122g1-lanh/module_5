@@ -5,6 +5,7 @@ import {ListContacts} from "./furama/contact/ListContact";
 import {Route, Routes} from "react-router";
 import {CreateContact} from "./furama/contact/CreateContact";
 import {ListService} from "./furama/factility/ListService";
+import {CreateService} from "./furama/factility/create-service";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <Route path={'/customer'} element={<ListCustomer/>}/>
             <Route path={'/facility'} element={<ListService/>}/>
             <Route path={'/contact-create'} element={<CreateContact/>}/>
+            <Route path={'/service-create'} element={<CreateService/>}/>
         </Routes>
 
     )

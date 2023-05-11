@@ -1,25 +1,40 @@
 import React, {useEffect, useState} from "react";
 import * as facilityService from "../../service/facilityService";
+import {Link} from "react-router-dom";
 
 export function ListService() {
-    const [facilitys,setFacilitys] = useState([])
-    const [facility,setFacility] = useState()
+    const [facilitys, setFacilitys] = useState([])
+    const [facility, setFacility] = useState()
+    const [listName, setListName] = useState([])
     useEffect(() => {
         const res = async () => {
             const result = await facilityService.findAll()
             setFacilitys(result)
         }
         res()
-    },[])
+    }, [])
     const handleDelete = async () => {
         await facilityService.remove(facility.id);
         let result = await facilityService.findAll();
         setFacilitys(result);
     };
+
     const getData = async (id) => {
         const data = await facilityService.getFacility(id);
         setFacility(data);
     };
+
+    const handleSearch = async () => {
+        let name = document.getElementById('nameStudent').value
+        const result = await facilityService.findByName(name)
+        if (result.length != 0) {
+            setFacilitys(result)
+        } else {
+            alert('không tìm thấy')
+        }
+
+    }
+
     return (
         <>
             <div className="container1">
@@ -31,26 +46,31 @@ export function ListService() {
                 />
             </div>
             <div className="row">
-                <h2 style={{textAlign:"center"}}>Danh sách dịch vụ</h2>
+                <h2 style={{textAlign: "center"}}>Danh sách dịch vụ</h2>
+                <Link to='/service-create'>Tạo mới dịch vụ</Link>
+                <div className='d-flex'>
+                    <input id='nameStudent' className="row-cols-3" type="search" placeholder="Search by name..."
+                           aria-label="Search"/>
+                    <button className="btn btn-outline-success" onClick={() => handleSearch()} type="button">Search
+                    </button>
+                </div>
                 {
-                    facilitys.map((value)=>(
-                        <div key={value.id} className="card col-3" style={{width: "25%"}}>
+                    facilitys.map((value) => (
+                        <div key={value.id} className="card col-3">
                             <img
                                 src={value.image}
-
-                                style= {{width:"100%",height:"80%"}}
-                                className="card-img-top"
                                 alt="..."
                             />
                             <div className="card-body">
                                 <h5 className="card-title">{value.name}</h5>
                                 <p className="card-text"> {value.area}</p>
-                                <a href="#" className="btn btn-primary" style={{marginRight:"3px"}}>
+                                <a href="#" className="btn btn-primary" style={{marginRight: "3px"}}>
                                     Sửa
                                 </a>
-                                <button onClick={()=>getData(value.id)} type="button" className="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" >
-                                    Delete
+                                <button onClick={() => getData(value.id)} type="button" className="btn btn-danger"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                    Xóa
                                 </button>
                             </div>
                         </div>
@@ -96,13 +116,15 @@ export function ListService() {
                             <h5 className="modal-title" id="exampleModalLabel">Delete</h5>
                         </div>
                         <div className="modal-body">
-                            <span>Bạn có muốn xóa</span> <span style={{color:'red'}}>{facility?.name}</span>
+                            <span>Bạn có muốn xóa</span> <span style={{color: 'red'}}>{facility?.name}</span>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary"
                                     data-bs-dismiss="modal">Cancel
                             </button>
-                            <button  onClick={()=>handleDelete()} type="button" className="btn btn-primary"  data-bs-dismiss="modal">OK</button>
+                            <button onClick={() => handleDelete()} type="button" className="btn btn-primary"
+                                    data-bs-dismiss="modal">OK
+                            </button>
                         </div>
                     </div>
                 </div>
