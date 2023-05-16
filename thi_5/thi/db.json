@@ -1,0 +1,46 @@
+{
+  "product": [
+    {
+      "maSo": 1,
+      "ten": "áo 1",
+      "ngayNhap": "01/01/2023",
+      "soLuong": 100,
+      "loaiSanPham": 1
+    },
+    {
+      "maSo": 2,
+      "ten": "quần 1",
+      "ngayNhap": "01/01/2023",
+      "soLuong": 80,
+      "loaiSanPham": 1
+    },
+    {
+      "maSo": 3,
+      "ten": "áo 2",
+      "ngayNhap": "01/01/2023",
+      "soLuong": 150,
+      "loaiSanPham": 2
+    },
+    {
+      "maSo": 4,
+      "ten": "áo 3",
+      "ngayNhap": "01/01/2023",
+      "soLuong": 100,
+      "loaiSanPham": 3
+    }
+  ],
+  "types": [
+    {
+      "maSo": 1,
+      "tenSP": "ấm"
+    },
+    {
+      "maSo": 2,
+      "tenSP": "thể thao"
+    },
+    {
+      "maSo": 3,
+      "tenSP": "lạnh"
+    }
+  ]
+}
